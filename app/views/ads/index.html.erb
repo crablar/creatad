@@ -1,0 +1,15 @@
+<h1>Listing ads</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @ads.each do |ad| %>
+      <tr>
+        <td><%= ad.title %></td>
+        <td><%= ad.text %></td>
+      </tr>
+  <% end %>
+</table>
