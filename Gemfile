@@ -39,3 +39,4 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'paperclip', '~> 3.0'
+gem 'rmagick', '~> 2.13.3'
