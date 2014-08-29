@@ -40,3 +40,4 @@ gem 'spring',        group: :development
 
 gem 'paperclip', '~> 3.0'
 gem 'rmagick', '~> 2.13.3'
+gem 'aws-sdk'
