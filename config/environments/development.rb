@@ -38,6 +38,8 @@ Rails.application.configure do
       :storage => :s3,
       :s3_credentials => {
           :bucket => ENV['creatad'],
+          :access_key_id => ENV['AKIAI6GDBDTYTYRJLWZA'],
+          :secret_access_key => ENV['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']
       }
   }
 
