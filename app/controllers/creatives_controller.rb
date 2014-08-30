@@ -7,7 +7,7 @@ class CreativesController < ApplicationController
     @creative = Creative.new(creative_params)
 
     @creative.save
-    redirect_to @creative
+    redirect_to action: "index"
   end
 
   def show
@@ -15,7 +15,7 @@ class CreativesController < ApplicationController
   end
 
   def index
-    @creatives = Creative.all
+    @creatives = Creative.all.sort_by { |creative|creative.created_at}.reverse
   end
 
   private
