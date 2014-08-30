@@ -1,0 +1,16 @@
+<h1>Listing ads</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @creatives.each do |creative| %>
+      <tr>
+        <td><%= creative.title %></td>
+        <td><%= creative.text %></td>
+        <td><%= image_tag creative.image.url %></td>
+      </tr>
+  <% end %>
+</table>

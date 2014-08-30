@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :ads
+  resources :creatives
 
-  root 'ads#index'
+  root 'creatives#index'
 end
