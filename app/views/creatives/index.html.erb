@@ -3,6 +3,7 @@
     <% @creatives.each do |creative| %>
       <tr>
         <td><%= image_tag creative.image.url %></td>
+        <td><%= creative.creator %></td>
       </tr>
     <% end %>
 </table>
