@@ -3,7 +3,7 @@
   <%= @ad.title %>
 </p>
 
-<%= image_tag @ad.image.url %>
+<%= image_tag @ad.image.url.slice(0..@ad.image.url.index("?")-1) %>
 
 <p>
   <strong>Text:</strong>
