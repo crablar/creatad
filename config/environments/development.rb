@@ -33,6 +33,14 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   # Raises error for missing translations
-  # config.action_view.raise_on_missing_translations = truez
+  # config.action_view.raise_on_missing_translations = true
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+          :bucket => ENV['creatad'],
+          :access_key_id => ENV['AKIAI2L7F6TGFDKXNUDQ'],
+          :secret_access_key => ENV['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']
+      }
+  }
 
 end
