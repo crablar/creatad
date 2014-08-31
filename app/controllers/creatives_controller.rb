@@ -5,7 +5,7 @@ class CreativesController < ApplicationController
 
   def create
     @creative = Creative.new(creative_params)
-    @creative.creator = current_user.email
+    @creative.creator = params[:creator_email]
     @creative.save
     redirect_to action: "index"
   end
@@ -20,7 +20,7 @@ class CreativesController < ApplicationController
 
   private
   def creative_params
-    params.require(:creative).permit(:title, :text, :image)
+    params.require(:creative).permit(:title, :text, :image, :creator_email)
   end
 
 end

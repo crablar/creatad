@@ -1,6 +1,7 @@
 <h1>New Ad</h1>
 
 <%= form_for :creative, :html => { :multipart => true }, url: creatives_path do |f| %>
+    <%= hidden_field_tag :creator_email, current_user.email %>
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title %>
