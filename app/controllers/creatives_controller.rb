@@ -20,7 +20,7 @@ class CreativesController < ApplicationController
 
   private
   def creative_params
-    params.require(:creative).permit(:title, :text, :image, :creator_email)
+    params.require(:creative).permit(:link, :image, :creator_email)
   end
 
 end
