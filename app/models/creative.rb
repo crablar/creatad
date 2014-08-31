@@ -1,6 +1,7 @@
 class Creative < ActiveRecord::Base
 
   has_attached_file :image,
+                    :default_url => "missing.jpg",
                     :bucket => 'creatad',
                     :storage => :s3,
                     :s3_credentials => {:access_key_id => "AKIAI6GDBDTYTYRJLWZA",
