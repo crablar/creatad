@@ -1,8 +1,9 @@
 <table>
     <% @creatives.each do |creative| %>
       <tr>
-        <td><%= link_to "#{image_tag(creative.image.url)}".html_safe, creative.link %></td>
+        <td><%= link_to(image_tag(creative.image.url), creative.link) %></td>
         <td><%= creative.creator %></td>
+        <td></td>
       </tr>
     <% end %>
 </table>
