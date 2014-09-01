@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
+<nav class="creatad-navbar" role="navigation">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -12,12 +12,11 @@
       <a class="navbar-brand" style="width: 150px" href="/"> <b>Creatad</b></a>
     </div>
 
-    <div class="navbar-collapse collapse" style="float:right;">
+    <div class="navbar-collapse collapse">
       <!--div id="search" style="float:left; padding-top:8px; width:300px; padding-right:80px;">
           <input class="form-control" type="text" placeholder="search">
       </div-->
-      <ul class="nav navbar-nav navbar-right">
-        <div>
+      <ul class="nav-control navbar-right">
           <% if user_signed_in? %>
               <li>
                 <%= link_to "Upload an ad", controller: "creatives", action: 'new' %>
@@ -43,12 +42,10 @@
                 <%= link_to('Login', new_user_session_path)  %>
               </li>
           <% end %>
-        </div>
-
       </ul>
     </div>
   </div>
-</div>
+</nav>
 
 <head>
   <title>Creatad</title>
