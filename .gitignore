@@ -16,4 +16,4 @@
 /tmp
 
 # ignore the grunt dependencies
-/node_modules/
+/lib/tasks/grunt/node_modules/
