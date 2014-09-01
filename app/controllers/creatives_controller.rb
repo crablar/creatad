@@ -5,6 +5,7 @@ class CreativesController < ApplicationController
 
   def create
     @creative = Creative.new(creative_params)
+    @creative.sanitize_link
     @creative.creator = params[:creator_email]
     @creative.save
     redirect_to action: "index"

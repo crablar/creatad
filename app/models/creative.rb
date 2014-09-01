@@ -13,4 +13,13 @@ class Creative < ActiveRecord::Base
                         :retina   => '-set colorspace sRGB -strip -sharpen 0x0.5'
                     }
   validates_attachment_content_type :image, :content_type => /image/
+
+	def sanitize_link
+		if(self.link.starts_with? 'www.')
+				self.link.prepend('http://')
+		elsif(!self.link.starts_with? 'http://www.')
+			self.link.prepend('http://www.')
+		end
+	end
+
 end
