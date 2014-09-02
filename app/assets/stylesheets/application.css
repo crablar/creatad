@@ -14,3 +14,29 @@
  *= require_self
  *= require bootstrap.css
  */
+
+body {
+    background-color: #1c1c1c;
+    padding-left: 3rem;
+}
+
+img.box_creative {
+    width: 300px;
+    height: 250px;
+    vertical-align: middle;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+img.long_vertical_creative {
+    width: 500px;
+    vertical-align: middle;
+    padding: 1rem;
+}
+
+img.long_horizontal_creative {
+    width: 500px;
+    vertical-align: middle;
+    padding: 1rem;
+}
