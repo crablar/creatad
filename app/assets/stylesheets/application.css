@@ -37,7 +37,9 @@ img.long_vertical_creative {
 }
 
 img.long_horizontal_creative {
-    width: 500px;
+    width: 728px;
+    height: 90px;
     vertical-align: middle;
-    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
 }
