@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902004924) do
+ActiveRecord::Schema.define(version: 20140902014744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,9 @@ ActiveRecord::Schema.define(version: 20140902004924) do
     t.string   "creator"
     t.integer  "upvote_count",       default: 0
     t.integer  "downvote_count",     default: 0
-    t.string   "dimension"
+    t.string   "dimensions"
+    t.integer  "width"
+    t.integer  "height"
   end
 
   create_table "users", force: true do |t|

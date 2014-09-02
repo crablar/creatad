@@ -5,20 +5,33 @@ class Creative < ActiveRecord::Base
                     :bucket => 'creatad',
                     :storage => :s3,
                     :s3_credentials => {:access_key_id => "AKIAI6GDBDTYTYRJLWZA",
-                                        :secret_access_key => "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"},
-                    :convert_options => {
-                        :thumb    => '-set colorspace sRGB -strip',
-                        :preview  => '-set colorspace sRGB -strip',
-                        :large    => '-set colorspace sRGB -strip',
-                        :retina   => '-set colorspace sRGB -strip -sharpen 0x0.5'
-                    }
+                                        :secret_access_key => "ktUwQrOfAfjDKsitVgNG3V411Su+WMNCws3FKOZ0"}
   validates_attachment_content_type :image, :content_type => /image/
+	before_save :extract_dimensions
 
 	def sanitize_link
 		if(self.link.starts_with? 'www.')
 				self.link.prepend('http://')
 		elsif(!self.link.starts_with? 'http://www.')
 			self.link.prepend('http://www.')
+		end
+	end
+
+	def extract_dimensions
+		tempfile = image.queued_for_write[:original]
+		unless tempfile.nil?
+			geometry = Paperclip::Geometry.from_file(tempfile)
+			self.width = geometry.width.to_i
+			self.height = geometry.height.to_i
+			if(self.width == 300 and self.height == 250)
+				self.dimensions = 'box_creative'
+			end
+			if(self.width == 160 and self.height == 600)
+				self.dimensions = 'long_vertical_creative'
+			end
+			if(self.width == 728 and self.height == 90)
+				self.dimensions = 'long_horizontal_creative'
+			end
 		end
 	end
 

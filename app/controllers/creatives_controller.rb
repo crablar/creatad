@@ -7,7 +7,6 @@ class CreativesController < ApplicationController
     @creative = Creative.new(creative_params)
     @creative.sanitize_link
     @creative.creator = params[:creator_email]
-    @creative.dimension = 'box_creative'
     @creative.save
     redirect_to action: "index"
   end
