@@ -16,7 +16,7 @@ class CreativesController < ApplicationController
   end
 
   def index
-    @creatives = Creative.all.sort_by { |creative|creative.created_at}.reverse
+	  @creatives = Creative.all.order("dimensions", "created_at").reverse_order
   end
 
   private

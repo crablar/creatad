@@ -17,3 +17,4 @@
 
 # ignore the grunt dependencies
 /lib/tasks/grunt/node_modules/
+.idea/*
