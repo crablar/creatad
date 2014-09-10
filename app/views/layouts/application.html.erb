@@ -1,62 +1,63 @@
 <!DOCTYPE html>
 <html>
-<nav class="creatad-navbar" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" style="width: 150px" href="/"> <%= image_tag('bw_navbar.png') %></a>
-    </div>
+    <head>
+        <title>Banner Warhol</title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <div class="creatad-navbar" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" style="width: 150px" href="/"> <%= image_tag('bw_navbar.png') %></a>
+                </div>
 
-    <div class="navbar-collapse collapse">
-      <!--div id="search" style="float:left; padding-top:8px; width:300px; padding-right:80px;">
-          <input class="form-control" type="text" placeholder="search">
-      </div-->
-      <ul class="nav-control navbar-right">
-          <% if user_signed_in? %>
-              <li>
-                <%= link_to "Upload an ad", controller: "creatives", action: 'new' %>
-              </li>
-              <li>
-                <%= link_to(current_user.email, edit_user_registration_path) %>
-              </li>
-          <% else %>
-              <li>
-                <%= link_to "Upload an ad", new_user_registration_path %>
-              </li>
-              <li>
-                <%= link_to('Register', new_user_registration_path)  %>
-              </li>
-          <% end %>
+                <div class="navbar-collapse collapse">
+                    <!--div id="search" style="float:left; padding-top:8px; width:300px; padding-right:80px;">
+                    <input class="form-control" type="text" placeholder="search">
+                    </div-->
 
-          <% if user_signed_in? %>
-              <li>
-                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-              </li>
-          <% else %>
-              <li>
-                <%= link_to('Login', new_user_session_path)  %>
-              </li>
-          <% end %>
-      </ul>
-    </div>
-  </div>
-</nav>
+                    <ul class="nav-control navbar-right">
+                        <% if user_signed_in? %>
+                            <li>
+                                <%= link_to "Upload an ad", controller: "creatives", action: 'new' %>
+                            </li>
+                            <li>
+                                <%= link_to(current_user.email, edit_user_registration_path) %>
+                            </li>
+                        <% else %>
+                            <li>
+                                <%= link_to "Upload an ad", new_user_registration_path %>
+                            </li>
+                            <li>
+                                <%= link_to('Register', new_user_registration_path)  %>
+                            </li>
+                        <% end %>
 
-<head>
-  <title>Banner Warhol</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+                        <% if user_signed_in? %>
+                            <li>
+                                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+                            </li>
+                        <% else %>
+                            <li>
+                                <%= link_to('Login', new_user_session_path)  %>
+                            </li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-<% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-<% end %>
 
-<%= yield %>
+        <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
 
-</body>
+        <%= yield %>
+
+    </body>
 </html>

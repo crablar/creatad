@@ -1,5 +1,4 @@
 @import "../../../vendor/assets/less/bootstrap/bootstrap.less";
-@import "../../../vendor/assets/less/bootstrap/mixins.less";
 .creatad-navbar {
     .navbar; .navbar-default; .navbar-fixed-top;
      .nav-control {
@@ -11,9 +10,29 @@
 
 }
 .creative {
-    .well();
-    padding: auto;
-    p {
-        
+    float: left;
+    margin: 0.5em;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+.creatives {
+    .container; .well;
+    > div:extend(.row) {
+        .box_creative:extend(.creative) {
+            width: 300px;
+            height: 250px;
+        }
+
+        .long_vertical_creative:extend(.creative) {
+            width: 160px;
+            height: 600px;
+        }
+
+        .long_horizontal_creative:extend(.creative) {
+            width: 728px;
+            height: 90px;
+        }
     }
 }
