@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%= favicon_link_tag 'favicon.ico' %>
+
 <html>
     <head>
         <title>Banner Warhol</title>
@@ -19,6 +21,7 @@
                     </div-->
 
                     <ul class="nav-control navbar-right">
+
                         <% if user_signed_in? %>
                             <li>
                                 <%= link_to "Upload an ad", controller: "creatives", action: 'new' %>
@@ -44,6 +47,9 @@
                                 <%= link_to('Login', new_user_session_path)  %>
                             </li>
                         <% end %>
+                      <li>
+                        <%= link_to "Prizes", prizes_index_path %>
+                      </li>
                     </ul>
                 </div>
             </div>

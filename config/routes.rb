@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :creatives
 
+  get 'prizes/index'
+
   root 'creatives#index'
 end
