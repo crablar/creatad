@@ -1,3 +1,87 @@
 // Place all the styles related to the ads controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+body {
+    background-color: $base01;
+    color: $base0;
+}
+.creatad-navbar {
+    background-color: $base03!important;
+    border-color: $base01!important;
+    .navbar-brand {
+        width: 150px;
+        img {
+            width: 100%;
+            position: relative;
+            top: -25px;
+            left: -20px;
+        }
+    }
+    a {
+        color: $base1!important;
+    }
+    @extend .navbar;
+    @extend .navbar-default;
+    @extend .navbar-fixed-top;
+
+    .nav-control {
+        @extend .nav;
+        @extend .navbar-nav; 
+        > li {
+            display: inline-block;
+        }
+    }
+}
+
+.creative {
+    float: left;
+    margin: 0.5em;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+.creatives {
+    @extend .container;
+    @extend .well;
+
+    background-color: $base02;
+    border-color: $base02;
+    > div {
+        .box_creative {
+            @extend .creative;
+            width: 300px;
+            height: 250px;
+        }
+
+        .long_vertical_creative {
+            @extend .creative;
+            width: 160px;
+            height: 600px;
+        }
+
+        .long_horizontal_creative {
+            @extend .creative;
+            width: 728px;
+            height: 90px;
+        }
+    }
+}
