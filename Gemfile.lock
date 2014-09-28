@@ -54,6 +54,8 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dropzonejs-rails (0.5.1)
+      rails (> 3.1)
     erubis (2.7.0)
     execjs (2.2.1)
     hike (1.2.3)
@@ -147,6 +149,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   coffee-rails (~> 4.0.0)
   devise
+  dropzonejs-rails
   jbuilder (~> 2.0)
   jquery-rails
   paperclip (~> 3.0)

@@ -13,4 +13,90 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "variables";
+.creatad-navbar {
+    background-color: $base03!important;
+    border-color: $base01!important;
+    .navbar-brand {
+        width: 150px;
+        img {
+            width: 100%;
+            position: relative;
+            top: -25px;
+            left: -20px;
+        }
+    }
+    a {
+        color: $base1!important;
+    }
+    @extend .navbar;
+    @extend .navbar-default;
+    @extend .navbar-fixed-top;
 
+    .nav-control {
+        @extend .nav;
+        @extend .navbar-nav; 
+        > li {
+            display: inline-block;
+        }
+    }
+}
+
+body {
+    background-color: $base01;
+    color: $base0;
+}
+.main-container {
+    @extend .container;
+    //default stylings. Basically hackey, though not too much so
+    .content:not(.creatives):not(.new-creative) {
+        @extend .col-sm-8;
+        @extend .col-sm-offset-2;
+        margin-bottom: 3em;
+        > br {display: none}
+        > a {
+            @extend .col-sm-4;
+            color: $blue;
+            font-weight: bold;
+        }
+        form {
+            @extend .well;
+            @extend .row;
+            background-color: $base01;
+            border: dashed $base02;
+            > div {
+                @extend .col-sm-6;
+                label, i {
+                    margin-left: 15px;
+                    font-size: 1em;
+                    margin-top: 0.5em;
+                    &[for="user_remember_me"]{
+                        font-size: 0.8em;
+                        margin-top: 2.1em;
+                    }
+                }
+                input { 
+                    @extend .input-lg;
+                    @extend .col-sm-12;
+                    border: none;
+                    outline: none;
+                    margin: 0.5em;
+                    &#user_remember_me { width: 5px; }
+                }
+                input[name="commit"] {
+                    @extend .col-sm-8;
+                    @extend .col-sm-offset-4;
+                    @extend .btn-lg;
+                    @extend .btn-primary;
+                    background-color: $blue;
+                    border: none;
+                    margin-top: 2.3em;
+                    margin-right: -7.5px;
+                    float: right;
+                }
+            }
+        }
+    }
+}

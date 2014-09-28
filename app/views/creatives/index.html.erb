@@ -1,9 +1,7 @@
-<div class="creatives">
-    <div>
-        <% @creatives.each do |creative| %>
-            <div class="<%= creative.dimensions %>">
-                <%= link_to(image_tag(creative.image.url), creative.link) %>
-            </div>
-        <% end %>
-    </div>
+<div>
+    <% @creatives.each do |creative| %>
+        <div class="<%= creative.dimensions %>">
+            <%= link_to(image_tag(creative.image.url), creative.link) %>
+        </div>
+    <% end %>
 </div>

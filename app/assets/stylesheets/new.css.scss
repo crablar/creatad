@@ -1,0 +1,47 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "variables";
+.new-creative {
+    @extend .col-sm-8;
+    @extend .col-sm-offset-2;
+    form {
+        @extend .well;
+        background-color: $base01;
+        border: dashed $base02;
+        input { 
+            @extend .input-lg;
+            border: none;
+            outline: none;
+        }
+
+        .file-upload {
+            @extend .col-sm-9;
+            position: relative;
+            overflow: hidden;
+            button {
+                @extend .btn-lg;
+                @extend .btn-primary;
+                margin-left: -15px;
+            }
+            input.upload {
+                margin: 0;
+                padding: 0;
+                cursor: pointer;
+                opacity: 0;
+                filter: alpha(opacity=0);
+            }
+            .filename {
+                @extend .col-sm-9;
+                font-size: 1.5em;
+            }
+        }
+
+        button {
+            @extend .col-sm-3;
+            @extend .btn-lg;
+            @extend .btn-primary;
+            background-color: $blue;
+            border: none;
+        }
+    }
+}
