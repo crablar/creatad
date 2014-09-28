@@ -5,13 +5,17 @@
 @import "bootstrap";
 @import "variables";
 .creative {
-    float: left;
     margin: 0.5em;
     img {
         height: 100%;
         width: 100%;
     }
 }
+
+.creative-container {
+  float: left;
+}
+
 .creatives {
     @extend .well;
     @extend .container;
@@ -27,9 +31,10 @@
         }
 
         .long_vertical_creative {
-            @extend .creative;
-            width: 160px;
-            height: 600px;
+          @extend .creative;
+          width: 160px;
+          height: 600px;
+          float: left;
         }
 
         .long_horizontal_creative {
