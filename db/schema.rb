@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140907224702) do
+ActiveRecord::Schema.define(version: 20140928190721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,13 +31,15 @@ ActiveRecord::Schema.define(version: 20140907224702) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "creator"
     t.integer  "upvote_count",       default: 0
     t.integer  "downvote_count",     default: 0
     t.string   "dimensions"
     t.integer  "width"
     t.integer  "height"
+    t.integer  "user_id"
   end
+
+  add_index "creatives", ["user_id"], name: "index_creatives_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

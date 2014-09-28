@@ -1,5 +1,5 @@
 class Creative < ActiveRecord::Base
-
+	belongs_to :user
   has_attached_file :image,
                     :default_url => "missing.jpg",
                     :bucket => 'creatad',
