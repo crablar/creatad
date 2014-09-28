@@ -14,10 +14,12 @@
 }
 .creatives {
     @extend .well;
+    @extend .container;
 
     background-color: $base02;
     border-color: $base02;
     > div {
+        > div { @extend .creative; }
         .box_creative {
             @extend .creative;
             width: 300px;
