@@ -23,6 +23,9 @@ class CreativesController < ApplicationController
         @creatives = Creative.all.order("dimensions", "created_at").reverse_order
     end
 
+    def prizes
+    end
+
     private
     def creative_params
         @namespace = "creatives"

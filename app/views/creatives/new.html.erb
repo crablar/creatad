@@ -1,4 +1,4 @@
-<h1>New Link</h1>
+<h1>Upload an ad!</h1>
 <%= form_for :creative, :html => { :multipart => true, :class => "row" }, url: creatives_path do |f| %>
     <%= hidden_field_tag :creator_email, current_user.email %>
     <div class="form-group">
@@ -9,7 +9,17 @@
     </div>
     <div class="file-upload">
         <button>Upload</button>
-        <p class="filename">No File Selected</p>
+        <div class="filename">
+            <p>
+                Recommended Sizes
+                <small>(in pixels, length x height)</small>
+            </p>
+            <ul class="list-inline">
+              <li>● 300x250</li>
+              <li>● 160x600</li>
+              <li>● 728x90</li>
+            </ul>
+        </div>
         <%= f.file_field :image, :class => "upload" %>
     </div>
     <%= f.button :type => :submit %>
