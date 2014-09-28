@@ -1,7 +1,22 @@
 <div>
-    <% @creatives.each do |creative| %>
-        <div class="<%= creative.dimensions %>">
-            <%= link_to(image_tag(creative.image.url), creative.link) %>
-        </div>
-    <% end %>
+  <% @creatives_box1.each do |creative| %>
+	  <div class="<%= creative.dimensions %>">
+		<%= link_to(image_tag(creative.image.url), creative.link) %>
+	  </div>
+  <% end %>
+  <% @creatives_tall.each do |creative| %>
+	  <div class="<%= creative.dimensions %>">
+		<%= link_to(image_tag(creative.image.url), creative.link) %>
+	  </div>
+  <% end %>
+  <% @creatives_wide.each do |creative| %>
+	  <div class="<%= creative.dimensions %>">
+		<%= link_to(image_tag(creative.image.url), creative.link) %>
+	  </div>
+  <% end %>
+  <% @creatives_box2.each do |creative| %>
+	  <div class="<%= creative.dimensions %>">
+		<%= link_to(image_tag(creative.image.url), creative.link) %>
+	  </div>
+  <% end %>
 </div>

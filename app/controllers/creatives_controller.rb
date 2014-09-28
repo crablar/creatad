@@ -10,7 +10,6 @@ class CreativesController < ApplicationController
 		@creative = Creative.new(creative_params)
 		@creative.sanitize_link
 		@creative.user = current_user
-		@creative.save
 		if @creative.save
 			redirect_to action: 'index'
 		else
@@ -25,7 +24,10 @@ class CreativesController < ApplicationController
 
 	def index
 		@namespace = 'creatives'
-		@creatives = Creative.all.order('dimensions', 'created_at').reverse_order
+		@creatives_box1 = Creative.where('dimensions=\'box_creative\'').order('created_at').take(2)
+		@creatives_tall = Creative.where('dimensions=\'long_vertical_creative\'').order('created_at').take(3)
+		@creatives_wide = Creative.where('dimensions=\'long_horizontal_creative\'').order('created_at').take(4)
+		@creatives_box2 = Creative.where('dimensions=\'box_creative\'').order('created_at').offset(2).take(4)
 	end
 
 	def upload_failed
