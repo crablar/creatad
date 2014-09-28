@@ -11,7 +11,11 @@ class CreativesController < ApplicationController
 		@creative.sanitize_link
 		@creative.user = current_user
 		@creative.save
-		redirect_to action: 'index'
+		if @creative.save
+			redirect_to action: 'index'
+		else
+			render :upload_failed
+		end
 	end
 
 	def show
@@ -22,6 +26,9 @@ class CreativesController < ApplicationController
 	def index
 		@namespace = 'creatives'
 		@creatives = Creative.all.order('dimensions', 'created_at').reverse_order
+	end
+
+	def upload_failed
 	end
 
 	def prizes
